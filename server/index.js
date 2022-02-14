@@ -1,23 +1,23 @@
 
-import path from 'path';
-import url from 'url';
-import https from 'https';
-import fs from 'fs'; 
+const  path = require('path') ;
+const  url = require('url') ;
+const  https = require('https') ;
+const  fs = require('fs') ;
+const  express = require('express') ;
+const  kurento = require('kurento-client') ;
+const  socketIO = require('socket.io') ;
+const  minimist = require('minimist') ;
 
-import express from 'express';
-import kurento from 'kurento-client';
-import socketIO from 'socket.io';
-import minimst from 'minimist';
 
-import { Session, Register } from './lib';
+const { Session, Register } = require('./lib');
 
 let userRegister = new Register();
 let rooms = {};
 
-const argv = minimst(process.argv.slice(2), {
+const argv = minimist(process.argv.slice(2), {
     default: {
-        as_uri: 'https://127.0.0.1:3000',
-        ws_uri: 'ws://54.223.104.239:8888/kurento'
+        as_uri: 'https://localhost:3000',
+        ws_uri: 'ws://96.85.103.129:8888/kurento'
     }
 });
 

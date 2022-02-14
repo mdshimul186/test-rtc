@@ -1,9 +1,10 @@
+const register = require("kurento-client/lib/register");
 
 
 /**
  * 
  */
-export default class Register {
+class Register {
 
     /**
      * 
@@ -64,3 +65,6 @@ export default class Register {
         return this.userSessionIds[id];
     }
 }
+
+
+module.exports.Register = Register

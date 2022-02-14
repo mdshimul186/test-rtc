@@ -1,7 +1,7 @@
-import Session from './session';
-import Register from './register';
+const {Session} = require('./session');
+const {Register} = require('./register');
 
-export {
+module.exports =  {
     Register,
     Session
 }
